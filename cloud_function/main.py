@@ -1,10 +1,7 @@
-def hello_world_fucntion(event, context):
-    """Responds to any HTTP request.
+def hello_world_function(event, context):
+    """Triggered by a change to a Cloud Storage bucket.
     Args:
-        request (flask.Request): HTTP request object.
-    Returns:
-        The response text or any set of values that can be turned into a
-        Response object using
-        `make_response <https://flask.palletsprojects.com/en/1.1.x/api/#flask.Flask.make_response>`.
+         event (dict): Event payload.
+         context (google.cloud.functions.Context): Metadata for the event.
     """
     print("hello world!")

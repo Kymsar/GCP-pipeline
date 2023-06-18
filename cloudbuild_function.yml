@@ -3,7 +3,7 @@ steps:
     args:
       - functions
       - deploy
-      - hello_world_fucntion
+      - hello_world_function
       - --runtime
       - python39
       - --source=./cloud_function
