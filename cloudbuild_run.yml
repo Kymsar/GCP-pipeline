@@ -15,6 +15,6 @@
    - '--image'
    - 'gcr.io/$PROJECT_ID/helloworld-run:$COMMIT_SHA'
    - '--region'
-   - 'eu-west-1c'
+   - 'europe-west1'
  images:
  - 'gcr.io/$PROJECT_ID/helloworld-run:$COMMIT_SHA'
