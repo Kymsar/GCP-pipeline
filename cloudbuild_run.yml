@@ -15,6 +15,9 @@
    - '--image'
    - 'gcr.io/$PROJECT_ID/helloworld-run:$COMMIT_SHA'
    - '--region'
-   - 'eu-west-1'
+   - 'eu-west-1c'
  images:
  - 'gcr.io/$PROJECT_ID/helloworld-run:$COMMIT_SHA'
+
+
+   ested URL <code>/v1/projects/thebridgegcp/locations/eu-west-1/services/helloworld-run:testIamPermissions
