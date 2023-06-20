@@ -15,8 +15,8 @@
    - run
    - deploy
    - webapp-run
-   - --image==gcr.io/$PROJECT_ID/helloworld-run:$COMMIT_SHA
-   - --region==europe-west1
+   - --image=gcr.io/$PROJECT_ID/helloworld-run:$COMMIT_SHA
+   - --region=europe-west1
    - --platform=managed
    - --allow-unauthenticated
    - --port=5000
