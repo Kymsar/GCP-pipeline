@@ -1,23 +1,26 @@
+# Utiliza una imagen base de Python con Flask instalado
+FROM python:3.9-slim
 
-# Use the official lightweight Python image.
-# https://hub.docker.com/_/python
-FROM python:3.11-slim
+# Establece el directorio de trabajo en /app
+WORKDIR /app
 
-# Allow statements and log messages to immediately appear in the logs
-ENV PYTHONUNBUFFERED True
+# Copia el archivo app.py al directorio de trabajo
+COPY web.py .
 
-# Copy local code to the container image.
-ENV APP_HOME /app
-WORKDIR $APP_HOME
-COPY . ./
+# Copia el archivo requirements.txt al directorio de trabajo
+COPY requirements.txt .
 
-# Install production dependencies.
+# Copia la carpeta templates al directorio de trabajo
+COPY templates/ templates/
+
+# Copia la carpeta static al directorio de trabajo
+COPY static/ static/
+
+# Instala las dependencias del proyecto
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Run the web service on container startup. Here we use the gunicorn
-# webserver, with one worker process and 8 threads.
-# For environments with multiple CPU cores, increase the number of workers
-# to be equal to the cores available.
-# Timeout is set to 0 to disable the timeouts of the workers to allow Cloud Run to handle instance scaling.
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
+# Expone el puerto en el que se ejecuta la aplicación
+EXPOSE 5000
 
+# Define el comando para iniciar la aplicación
+CMD ["python", "web.py"]
