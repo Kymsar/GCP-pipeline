@@ -1,6 +1,4 @@
-flask
-dash
-dash-html-components
-dash-core-components
-boto3
-prettytable
+# Function dependencies, for example:
+# package>=version
+google-cloud-storage
+google-cloud-datastore
