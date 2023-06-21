@@ -3,7 +3,7 @@ steps:
     args:
       - functions
       - deploy
-      - bucket_to_database
+      - write_database
       - --runtime
       - python39
       - --source=./cloud_function
