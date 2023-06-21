@@ -3,12 +3,13 @@ steps:
     args:
       - functions
       - deploy
-      - hello_world_function
+      - bucket_to_database
       - --runtime
       - python39
       - --source=./cloud_function
       - --trigger-bucket
       - gs://thebridge_ej_gcp
+      - --allow-unauthenticated
       - --region=europe-west1
 
 #gcloud builds submit --config=cloudbuild-functions-python.yaml
